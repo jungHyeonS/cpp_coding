@@ -138,5 +138,5 @@ int main(){
     a = 0;
     cout << bool(a) << "\n";
     a = 3;
-    cout << bool(a) << "\n"
+    cout << bool(a) << "\n";
 }
