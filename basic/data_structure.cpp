@@ -310,15 +310,53 @@ using namespace std;
 //     }
 //     return 0;
 // }
-map<int,int> mp;
-map<string,string> mp2;
+// map<int,int> mp;
+// map<string,string> mp2;
+// int main(){
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);cout.tie(NULL);
+//     cout << mp[1] << "\n";
+//     cout << mp2["aaa"] << "\n";
+//     for(auto i : mp) cout << i.first << " " << i.second;
+//     cout << "\n";
+//     for(auto i : mp2) cout << i.first << " " << i.second;
+//     return 0;
+// }
+
+//맵에 요소가 있는지 없는지 확인하고 맵에 데이터를 할당
+// map<int,int> mp;
+// map<string,string> mp2;
+// int main(){
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL); cout.tie(NULL);
+//     if(mp[1] == 0){
+//         mp[1] = 2;
+//     }
+//     for(auto i : mp) cout << i.first << " " << i.second;
+//     return 0;
+// }
+
+// map<int,int> mp;
+// map<string,string> mp2;
+// int main(){
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     cout.tie(NULL);
+//     if(mp.find(1) == mp.end()){
+//         mp[1] = 2;
+//     }
+//     for(auto i : mp) cout << i.first << " " << i.second;
+//     return 0;
+// }
+
+//unoordered_map
+unordered_map<string,int> umap;
 int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);cout.tie(NULL);
-    cout << mp[1] << "\n";
-    cout << mp2["aaa"] << "\n";
-    for(auto i : mp) cout << i.first << " " << i.second;
-    cout << "\n";
-    for(auto i : mp2) cout << i.first << " " << i.second;
+    umap["bcd"] = 1;
+    umap["aaa"] = 1;
+    umap["aba"] = 1;
+    for(auto it : umap){
+        cout << it.first << " : " << it.second << "\n";
+    }
     return 0;
 }
