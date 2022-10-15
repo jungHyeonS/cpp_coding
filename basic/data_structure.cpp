@@ -350,13 +350,133 @@ using namespace std;
 // }
 
 //unoordered_map
-unordered_map<string,int> umap;
-int main(){
-    umap["bcd"] = 1;
-    umap["aaa"] = 1;
-    umap["aba"] = 1;
-    for(auto it : umap){
-        cout << it.first << " : " << it.second << "\n";
-    }
-    return 0;
-}
+// unordered_map<string,int> umap;
+// int main(){
+//     umap["bcd"] = 1;
+//     umap["aaa"] = 1;
+//     umap["aba"] = 1;
+//     for(auto it : umap){
+//         cout << it.first << " : " << it.second << "\n";
+//     }
+//     return 0;
+// }
+
+
+// set : 특정 순서에 따라 고유한 요소를 저장하는 컨테이너, 중복되는 요소가 업속, 오로지 유니크한 값만 저장하는 자료 구조
+
+// int main(){
+//     set<pair<string,int>> st;
+//     st.insert({"test",1});
+//     st.insert({"test",1});
+//     st.insert({"test",1});
+//     st.insert({"test",1});
+//     cout <<st.size() << "\n";
+//     set<int> st2;
+
+//     st2.insert(1);
+//     st2.insert(2);
+//     st2.insert(2);
+
+//     for(auto it : st2){
+//         cout << it << "\n";
+//     }
+
+//     return 0;
+
+// }
+
+
+
+
+
+
+// multiset : 중복되는 원소도 집어넣을수있는 자료 구조, key,value 형태로 집어넣을수 없고
+// 넣으면 자동적으로 정렬되는 자료 구조, erase,find,insert 가능
+
+
+// multiset<int> s;
+// int main(){
+//     s.insert(12);
+//     s.insert(10);
+//     s.insert(2);
+//     s.insert(10);
+//     s.insert(90);
+//     s.insert(85);
+//     s.insert(45);
+
+//     cout << "Multset elements afset sort\n";
+//     for(auto it = s.begin(); it != s.end(); it++)
+//         cout << *it << " ";
+//     cout << "\n";
+    
+//     auto it1 = s.find(10);
+//     auto it2 = s.find(90);
+
+//     s.erase(it1,it2);
+
+//     cout << "Multiset Elemetns after erase:\n";
+//     for(auto it = s.begin(); it != s.end(); it++)
+//         cout << (*it) << " ";
+
+//     s.erase(s.begin());
+//     cout << "\n";
+
+//     for(auto it = s.begin(); it != s.end(); it++)
+//         cout << (*it) << " ";
+
+//     return 0;
+// }
+
+
+// stack : 가장 마지막으로 들어간 데이터가 가장 첫번째로 나오는 성질(LIFO : Last In First Out)을 가진 자료 구조
+// 재귀적인 ㅎ마수, 알고리즘에 사용, 웹 브라우저 방문 기록 등에 쓰인다
+// 삽입 및 삭제에 O(1), 탐색에 O(n)이 걸린다
+
+// 문자열 폭발, 아름다운 괄호만들기, 짝을 찾기 등에 문제에 쓰인다, "교차하지 않고" 라는 문장이 나오면 스택을 사용하질 말지를 의심
+
+// stack<string> stk;
+// int main(){
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     stk.push("엄");
+//     stk.push("준");
+//     stk.push("식");
+//     stk.push("화");
+//     stk.push("이");
+//     stk.push("팅");
+//     while(stk.size()){
+//         cout << stk.top() << "\n";
+//         stk.pop();
+//     }
+// }
+
+
+// 큐 : 먼저 집어넣은 데이터가 먼저 나오는 성질(FIFO, First In First Out)을 지닌 자료 구조,
+// 나중에 집어 넣은 데이터가 먼저 나오는 스택과는 반대되는 개념, 삽입 및 삭제에 O(1) 탐색에 O(n)이 걸린다
+// 주로 BFS에 쓰인다
+
+// int main(){
+//     queue<int> q;
+//     q.push(1);
+//     cout << q.front() << "\n";
+//     q.pop();
+//     cout << q.size() << "\n";
+//     return 0;
+// }
+
+// 보통 큐는 size와 함계 쓰인다 pop을 하게되면 size가 작아지고, 그러다가 0이되면 false가 되면서 while문이 종료가 되어 루프를 빠져나오게되는 로직
+// int main(){
+//     queue<int> q;
+//     for(int i =1; i <= 10; i++) q.push(i);
+//     while(q.size()){
+//         cout << q.front() << " ";
+//         q.pop();
+//     }
+//     return 0;
+// }
+
+
+// deque : queue는 앞에서만 끄집어낼수 있지만 deque 는 앞뒤로 참고가 가능한 자료구조
+
+
+
