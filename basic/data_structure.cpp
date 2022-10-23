@@ -480,3 +480,51 @@ using namespace std;
 
 
 
+//커스텀한 정렬이 필요할경우
+// struct Point{
+//     int y,x; //구조체의 변수들
+
+//     // y,x를 받아 생성한다 class의 생성자와 비슷하다
+//     // 이 구초제를 기반으로 객체를 생성할때 y,x를 받아 생성한다
+//     Point(int y, int x) : y(y), x(x){}
+
+
+//     // 만약 y,x가 정해지지 않은 경우 기본값으로 -1,-1를 집어넣는다
+//     Point(){y = -1, x = -1;}
+
+//     //해당 구초제를 기반으로 만들어진 객체들끼리 비교해야 되는 경우갸 있다
+//     //PointA < PointB와 같이, 그럴때 비교하는 기준을 잡는다, 1순위는 x,2순위는 y를 기반으로 크고 작음을 판단
+//     bool operator < (const Point & a) const {
+//         if(x == a.x) return y < a.y;
+//         return x < a.x;
+//     }
+// };
+
+
+// //정렬이 필요하지 않을 경우
+// struct percent{
+//     int x,y;
+//     double w,d,l;
+// } a[6];
+
+
+struct Point{
+    int y,x;
+    Point(int y,int x) : y(y), x(x){}
+    Point(){y=-1,x=-1;}
+    bool operator  < (const Point & a) const{
+        if(x == a.x) return y < a.y;
+        return x < a.x;
+    }
+};
+
+vector<Point> v;
+int main(){
+    for(int i = 10; i >= 1; i--){
+        Point a = {i,i};
+        v.push_back(a);
+    }
+    sort(v.begin(), v.end());
+    for(auto it : v) cout << it.y << " : " << it.x << '\n';
+        return 0;
+}
