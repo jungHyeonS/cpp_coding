@@ -27,29 +27,62 @@ void printV(vector<int> &v){
 }
 
 
-void makePermutation(int n,int r, int depth){
-    cout << n << " : " << r << " : " << depth << "\n";
-    if(r == depth){
-        printV(v);
-        return ;
-    }
-    //depth를 기반으로 swap
-    for(int i = depth; i < n; i++){
-        swap(v[i],v[depth]);
-        makePermutation(n,r,depth + 1);
-        swap(v[i],v[depth]);
-    }
-    return;
+// void makePermutation(int n,int r, int depth){
+//     cout << n << " : " << r << " : " << depth << "\n";
+//     if(r == depth){
+//         printV(v);
+//         return ;
+//     }
+//     //depth를 기반으로 swap
+//     for(int i = depth; i < n; i++){
+//         swap(v[i],v[depth]);
+//         makePermutation(n,r,depth + 1);
+//         swap(v[i],v[depth]);
+//     }
+//     return;
+// }
+
+
+// int main(){
+//     for (int i = 1; i <=3; i++)v.push_back(i);
+
+//     makePermutation(3,3,0);
+//     // do{
+//     //     printV(v);
+//     // }while(next_permutation(v.begin(),v.end()));
+
+//     return 0;
+// }
+
+int n = 5, k = 3,a[5] = {1,2,3,4,5};
+
+void print(vector<int> b){
+    for(int i : b)cout << i << "";
+    cout << "\n";
 }
-
-
+void combi(int start,vector<int> b){
+    if(b.size() == k){
+        print(b);
+        return;
+    }
+    for(int i = start + 1; i < n; i++){
+        b.push_back(i);
+        combi(i,b);
+        b.pop_back();
+    }
+    return ;
+}
 int main(){
-    for (int i = 1; i <=3; i++)v.push_back(i);
+    vector<int> b;
+    combi(-1,b);
 
-    makePermutation(3,3,0);
-    // do{
-    //     printV(v);
-    // }while(next_permutation(v.begin(),v.end()));
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < i; j++){
+            for(int k = 0; k < j; k++){
+                cout << i << " : " << j << " : " << k << "\n";
+            }
+        }
+    }
 
     return 0;
 }
