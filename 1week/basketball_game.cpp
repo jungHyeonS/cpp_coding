@@ -43,6 +43,6 @@ int main(){
         }
     }
     if(ret.size()) cout << ret << "\n";
-    else cout << "PREDAJA" << "\n"
+    else cout << "PREDAJA" << "\n";
     return 0;
 }
