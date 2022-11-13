@@ -8,15 +8,10 @@ int main(){
     for(int i = 0; i < 9; i++){
         cin >> arr[i];
     }
-
-
     //순열을 정렬이 되어있어야 되기때문에 정렬을 한다,또한 문제에 오름차순이라고 되어있다
     sort(arr,(arr+9));
-
-
     //next_permutation 함수로 9개의 숫자에 대한 순열을 뽑는다
     do{
-
         //뽑아진 순열에서 7개를 가져와 sum에 더해준다
         sum = 0;
         for(int j = 0; j < 7; j++){
